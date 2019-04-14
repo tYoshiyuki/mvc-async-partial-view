@@ -20,11 +20,18 @@ namespace MvcAsyncPartialView.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Contents()
+        public async Task<IActionResult> TopContents()
         {
             await Task.Delay(1000);
-            return PartialView("_ContentsPartial");
+            return PartialView("_TopContentsPartial");
         }
+
+        public async Task<IActionResult> SubContents()
+        {
+            await Task.Delay(1000);
+            return PartialView("_SubContentsPartial");
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
